@@ -5,11 +5,12 @@
     .module('home')
     .controller('HomeController', HomeController);
 
-  HomeController.$inject = ['$scope', 'ArticlesService'];
+  HomeController.$inject = ['$scope','HomeService'];
 
-  function HomeController($scope, ArticlesService) {
+  function HomeController($scope, HomeService) {
     var vm = this;
-
-    vm.articles = ArticlesService.query();
+    HomeService.get().then(function(e){
+      vm.home = e;
+    })
   }
 }());

@@ -17,11 +17,9 @@
     vm.callOauthProvider = callOauthProvider;
     vm.usernameRegex = /^(?=[\w.-]+$)(?!.*[._-]{2})(?!\.)(?!.*\.$).{3,34}$/;
 
-    // Get an eventual error defined in the URL query string:
     if ($location.search().err) {
       Notification.error({ message: $location.search().err });
     }
-    // If user is signed in then redirect back home
     if (vm.authentication.user) {
       $location.path('/home');
     }
@@ -60,23 +58,18 @@
         .catch(onUserSigninError);
     }
 
-    // OAuth provider request
     function callOauthProvider(url) {
       if ($state.previous && $state.previous.href) {
         url += '?redirect_to=' + encodeURIComponent($state.previous.href);
       }
 
-      // Effectively call OAuth authentication route:
       $window.location.href = url;
     }
 
-    // Authentication Callbacks
 
     function onUserSignupSuccess(response) {
-      // If successful we assign the response to the global user model
       vm.authentication.user = response;
       Notification.success({ message: '<i class="glyphicon glyphicon-ok"></i> Регистрация выполнена!' });
-      // And redirect to the previous or home page
       $state.go($state.previous.state.name || 'home', $state.previous.params);
     }
 
@@ -85,13 +78,10 @@
     }
 
     function onUserSigninSuccess(response) {
-      // If successful we assign the response to the global user model
       vm.authentication.user = response;
       Notification.info({ message: 'Добро пожаловать ' + response.firstName });
-      // And redirect to the previous or home page
         $location.path('/home');
-      //$state.go($state.previous.state.name || 'home', $state.previous.params);
-    }
+      }
 
     function onUserSigninError(response) {
       try {
@@ -100,7 +90,7 @@
           title: '<i class="glyphicon glyphicon-remove"></i> Ошибка регистрац!',
           delay: 6000
         });
-      }catch(e){}
+      } catch(e) { }
     }
   }
 }());

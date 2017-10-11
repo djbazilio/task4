@@ -9,6 +9,6 @@
 
   function UserMenuController($scope, menuService) {
     var vm = this;
-    vm.accountMenu = menuService.getMenu('account').items[0]; //769727
+    vm.accountMenu = menuService.getMenu('account').items[0];
   }
 }());
