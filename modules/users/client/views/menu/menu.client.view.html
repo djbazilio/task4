@@ -1,0 +1,19 @@
+<section class="container">
+    <section class="row">
+        <div class="col-md-2">
+            <nav class="menu_prof">
+                <ul class="nav nav-pills nav-stacked">
+                    <li ui-sref-active="active" ng-repeat="item in vm.accountMenu.items">
+                        <a ui-sref="{{item.state}}" ng-bind="item.title"></a>
+                    </li>
+                    <li class="divider"></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-md-10">
+            <div ui-view></div>
+    </section>
+<pre>
+    {{vm | json}}
+</pre>
+</section>

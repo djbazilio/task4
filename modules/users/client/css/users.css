@@ -1,0 +1,62 @@
+@media (min-width: 992px) {
+  .nav-users {
+    position: fixed;
+  }
+}
+.social-account-container {
+  display: inline-block;
+  position: relative;
+}
+.btn-add-remove-account {
+  pointer-events: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.user-profile-picture {
+  max-height: 150px;
+  min-height: 150px;
+}
+.social-button {
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.social-button:hover {
+  opacity: 0.65;
+}
+.menu_prof{
+  border-radius: 5px;
+  padding-top: 0.35714em;
+  padding-bottom: 0.35714em;
+  background: #fafafa;
+  border: 1px solid #ccc;
+  margin-bottom: 1em;
+}
+.menu_prof a {
+  color: black;
+  border-radius: 1px;
+  padding: 1px 0;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  box-shadow: none;
+  background: #d5ecf7;
+  color: #1379de;
+  font-weight: bold;
+  margin-left: 0;
+  margin-right: 0;
+  width: auto;
+}
+.menu_prof a:hover {
+  background: #1379de;
+}
+.menu_prof > li > a {
+  position: relative;
+  display: block;
+  padding: 5px 10px;
+}
+.user-profile-picture {
+  max-height: 250px;
+  min-height: 250px;
+}
